@@ -26,12 +26,12 @@ public class Yatzoo {
 		this.spillere = spillere;
 	}
 	
-	public void spill() {
-		while (runde < 13) {
+	public void spill(int i) {
+		while (runde <= i) {
 			spillRunde();
 		}
-		for (Spiller spiller : spillere) {
-			summerPoeng(spiller);
+		for (Spiller s : spillere) {
+			summerPoeng(s);
 		}
 		finnVinner();
 	}
@@ -63,7 +63,7 @@ public class Yatzoo {
 			}
 			if (count != 2) {
 				System.out.println(
-						"\nSkriv inn tallene på terningene du ønsker å beholde, skilt med mellomrom.\nEks: '1 4 5' (fjerner 2 og 3)");
+						"\nSkriv inn tallene på terningene du ønsker å beholde, skilt med mellomrom.\nEks: '1 4 5' (Triller 2 og 3 på nytt)");
 				String input = tastatur.nextLine();
 				String[] inputTab = input.split("\\s+");
 				int tablengde;
@@ -112,10 +112,14 @@ public class Yatzoo {
 				vinnere.add(spillere[i]);
 			}
 		}
+		System.out.println("\nResultatliste:");
+		for (Spiller s : spillere) {
+			System.out.println(s.getNavn() + "\t:\t" + s.getPoengscore() + "p");
+		}
 		if (flereVinnere) {
 			System.out.print("\nDet er flere spillere med like stor poengsum som deler 1. plassen.\nGratulerer");
-			for (Spiller spiller : vinnere) {
-				System.out.print("  " + spiller.getNavn());
+			for (Spiller s : vinnere) {
+				System.out.print("  " + s.getNavn());
 			}
 			System.out.println("!");
 		} else {
