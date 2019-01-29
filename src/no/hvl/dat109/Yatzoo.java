@@ -26,6 +26,10 @@ public class Yatzoo {
 		this.spillere = spillere;
 	}
 	
+	/**
+	 * Starter selve spillet, med antall ønskede runder som parameter.
+	 * @param i - angir hvor mange runder som skal spilles
+	 */
 	public void spill(int i) {
 		while (runde <= i) {
 			spillRunde();
@@ -36,6 +40,9 @@ public class Yatzoo {
 		finnVinner();
 	}
 	
+	/**
+	 * Bruker kastTerninger() for å spille én runde for alle spillere.
+	 */
 	public void spillRunde() {
 		for (Spiller spiller : spillere) {
 			System.out.println("\n" + spiller.getNavn() + " sin tur."
@@ -48,6 +55,10 @@ public class Yatzoo {
 		runde++;
 	}
 
+	/**
+	 * Metoden tar for seg hele turen til én spiller. Den kaster terningene, sjekker hvilke terninger 
+	 * spilleren vil beholde og kaster de andre på nytt.
+	 */
 	public void kastTerninger() {
 		int antall = 5;
 		boolean ferdig = false;
@@ -87,6 +98,10 @@ public class Yatzoo {
 		}
 	}
 	
+	/**
+	 * Summer poengene for en enkelt spiller og lagrer det i spiller-objektet.
+	 * @param spiller - spilleren som poeng summeres for
+	 */
 	public void summerPoeng(Spiller spiller) {
 		int sum = 0;
 		for (int i : spiller.getKolonne().getKolonne()) {
@@ -95,6 +110,9 @@ public class Yatzoo {
 		spiller.setPoengscore(sum);
 	}
 	
+	/**
+	 * Skriver ut spiller(ne) med høyest poengsum.
+	 */
 	public void finnVinner() {
 		boolean flereVinnere = false;
 		Spiller vinner = spillere[0];

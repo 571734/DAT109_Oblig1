@@ -52,6 +52,13 @@ public class Rad {
 		rad[11] = runde12;
 	}
 	
+	/**
+	 * Tar en runde og en liste med terninger - og sjekker hva resultatet for den angitte runden er, 
+	 * med de angitte terningene.
+	 * @param runde - runden som sjekkes
+	 * @param terningkast - liste med terningene som sjekkes
+	 * @return resultat av sjekken
+	 */
 	public int rundeSjekk(int runde, ArrayList<Dyr> terningkast) {
 		int resultat = 0;
 		Map<Dyr, Integer> antallKart = mapAntall(terningkast);
@@ -131,15 +138,20 @@ public class Rad {
 		return resultat;
 	}
 	
+	/**
+	 * Lager et map av forskjellige dyr og forekomsten av dyret.
+	 * @param terningkast - liste av terningene som sjekkes
+	 * @return et map av dyr og forekomst av dyret
+	 */
 	public Map<Dyr, Integer> mapAntall(ArrayList<Dyr> terningkast){
 		Map<Dyr, Integer> map = new HashMap<>();
-		for (Dyr key : terningkast) {
-            if (map.containsKey(key)) {
-                int forekomst = map.get(key);
+		for (Dyr dyr : terningkast) {
+            if (map.containsKey(dyr)) {
+                int forekomst = map.get(dyr);
                 forekomst++;
-                map.put(key, forekomst);
+                map.put(dyr, forekomst);
             } else {
-                map.put(key, 1);
+                map.put(dyr, 1);
             }
         }
 		return map;

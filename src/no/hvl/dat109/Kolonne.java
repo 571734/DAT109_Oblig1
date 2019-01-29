@@ -13,6 +13,11 @@ public class Kolonne {
 		kolonne = new int[12];
 	}
 	
+	/**
+	 * Oppdaterer verdien for en enkelt spiller i en angitt runde.
+	 * @param runde - runden som skal ha ny verdi
+	 * @param verdi - den nye verdien
+	 */
 	public void oppdaterVerdi(int runde, int verdi) {
 		kolonne[runde-1] = verdi;
 	}

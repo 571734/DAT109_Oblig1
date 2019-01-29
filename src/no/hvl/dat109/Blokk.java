@@ -28,6 +28,10 @@ public class Blokk {
 		tildelRader(spillere);
 	}
 
+	/**
+	 * Tildeler én kolonne til hver av spillerne
+	 * @param spillere - liste av alle spillere
+	 */
 	public void tildelRader(Spiller[] spillere) {
 		for (int i = 0; i < spillere.length; i++) {
 			spillere[i].setKolonne(kolonner[i]);

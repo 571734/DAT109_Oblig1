@@ -35,7 +35,7 @@ public class Terning {
 	
 	/**
 	 * Triller terningen og returnerer et dyr-objekt
-	 * @return
+	 * @return et tilfeldig dyr-objekt
 	 */
 	public Dyr trillTerning() {
 		int resultat = random.nextInt(6);
