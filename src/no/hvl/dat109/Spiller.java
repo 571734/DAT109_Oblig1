@@ -19,8 +19,7 @@ public class Spiller {
 	}
 	
 	/**
-	 * Summer poengene for en enkelt spiller og lagrer det i spiller-objektet.
-	 * @param spiller - spilleren som poeng summeres for
+	 * Summerer poengene for en enkelt spiller og lagrer det i spiller-objektet.
 	 */
 	public void summerPoeng() {
 		int sum = 0;
