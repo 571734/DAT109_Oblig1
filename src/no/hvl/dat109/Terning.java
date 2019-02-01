@@ -11,7 +11,7 @@ import java.util.Random;
  */
 public class Terning {
 	public Dyr[] terning;
-	Random random = new Random();
+	private Random random = new Random();
 	private Dyr love = new Dyr("løve", "Oransje", 1);
 	private Dyr slange = new Dyr("slange", "Grønn", 2);
 	private Dyr panda = new Dyr("panda", "Svart", 3);
