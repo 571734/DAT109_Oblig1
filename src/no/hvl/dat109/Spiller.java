@@ -18,6 +18,18 @@ public class Spiller {
 		this.poengscore = 0;
 	}
 	
+	/**
+	 * Summer poengene for en enkelt spiller og lagrer det i spiller-objektet.
+	 * @param spiller - spilleren som poeng summeres for
+	 */
+	public void summerPoeng() {
+		int sum = 0;
+		for (int i : kolonne.getKolonne()) {
+			sum += i;
+		}
+		this.setPoengscore(sum);
+	}
+	
 	public int getPoengscore() {
 		return poengscore;
 	}

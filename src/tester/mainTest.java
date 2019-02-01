@@ -4,6 +4,7 @@
 package tester;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -256,6 +257,38 @@ public class mainTest {
 	 */
 	@Test
 	public void mapTest() {
+		terninger.add(love);
+		terninger.add(love);
+		terninger.add(slange);
+		terninger.add(panda);
+		terninger.add(panda);
+		terninger.add(panda);
+		terninger.add(elefant);
+		terninger.add(hval);
+		terninger.add(hval);
+		terninger.add(hval);
+		terninger.add(hval);
+		
+		Map<Dyr, Integer> testMap = blokk.getRad().mapAntall(terninger);
+		int antallLover = testMap.get(love);
+		Assert.assertEquals(2, antallLover);
+		int antallSlanger = testMap.get(slange);
+		Assert.assertEquals(1, antallSlanger);
+		int antallPandaer = testMap.get(panda);
+		Assert.assertEquals(3, antallPandaer);
+		int antallElefanter = testMap.get(elefant);
+		Assert.assertEquals(1, antallElefanter);
+		int antallHvaler = testMap.get(hval);
+		Assert.assertEquals(4, antallHvaler);
+		int antallGriser;
+		try {
+			antallGriser = testMap.get(gris);
+		} catch (NullPointerException e) {
+			antallGriser = 0;
+			e.printStackTrace();
+		}
+		Assert.assertEquals(0, antallGriser);
+		
 		
 	}
 	
@@ -264,7 +297,20 @@ public class mainTest {
 	 */
 	@Test
 	public void summerPoengTest() {
-		
+		spiller1.getKolonne().oppdaterVerdi(1, 1);
+		spiller1.getKolonne().oppdaterVerdi(2, 2);
+		spiller1.getKolonne().oppdaterVerdi(3, 3);
+		spiller1.getKolonne().oppdaterVerdi(4, 4);
+		spiller2.getKolonne().oppdaterVerdi(1, 2);
+		spiller2.getKolonne().oppdaterVerdi(2, 3);
+		spiller2.getKolonne().oppdaterVerdi(3, 4);
+		spiller2.getKolonne().oppdaterVerdi(4, 5);
+		spiller1.summerPoeng();
+		spiller2.summerPoeng();
+		int spiller1sum = spiller1.getPoengscore();
+		int spiller2sum = spiller2.getPoengscore();
+		Assert.assertEquals(10, spiller1sum);
+		Assert.assertEquals(14, spiller2sum);
 	}
 
 }

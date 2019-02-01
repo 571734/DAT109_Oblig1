@@ -35,7 +35,7 @@ public class Yatzoo {
 			spillRunde();
 		}
 		for (Spiller s : spillere) {
-			summerPoeng(s);
+			s.summerPoeng();
 		}
 		finnVinner();
 	}
@@ -96,18 +96,6 @@ public class Yatzoo {
 			
 			count++;
 		}
-	}
-	
-	/**
-	 * Summer poengene for en enkelt spiller og lagrer det i spiller-objektet.
-	 * @param spiller - spilleren som poeng summeres for
-	 */
-	public void summerPoeng(Spiller spiller) {
-		int sum = 0;
-		for (int i : spiller.getKolonne().getKolonne()) {
-			sum += i;
-		}
-		spiller.setPoengscore(sum);
 	}
 	
 	/**
