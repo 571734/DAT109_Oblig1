@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author Sivert
+ * @author Marcus
  *
  */
 public class Rad {

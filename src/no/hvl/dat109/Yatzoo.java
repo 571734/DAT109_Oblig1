@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * @author Sivert
+ * @author Marcus
  *
  */
 public class Yatzoo {
@@ -51,6 +51,7 @@ public class Yatzoo {
 			int resultat = blokk.getRad().rundeSjekk(runde, terningkast);
 			spiller.getKolonne().oppdaterVerdi(runde, resultat);
 			terningkast.clear();
+			System.out.println("\n");
 		}
 		runde++;
 	}

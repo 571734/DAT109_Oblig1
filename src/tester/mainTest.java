@@ -16,7 +16,7 @@ import no.hvl.dat109.Spiller;
 import no.hvl.dat109.Terning;
 
 /**
- * @author Sivert
+ * @author Marcus
  *
  */
 public class mainTest {

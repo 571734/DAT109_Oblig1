@@ -4,7 +4,7 @@
 package no.hvl.dat109;
 
 /**
- * @author Sivert
+ * @author Marcus
  *
  */
 public class Blokk {

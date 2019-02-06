@@ -6,7 +6,7 @@ package no.hvl.dat109;
 import java.util.Random;
 
 /**
- * @author Sivert
+ * @author Marcus
  *
  */
 public class Terning {
