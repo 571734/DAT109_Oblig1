@@ -84,10 +84,11 @@ public class Yatzoo {
 					inputTab = input.split("\\s+");
 					if (input.equals("") || input.equals(" ")) {
 						tablengde = 0;
+						gyldigeTerninger = true;
 					} else {
 						tablengde = inputTab.length;
+						gyldigeTerninger = isTerningvalgGyldig(inputTab);
 					} 
-					gyldigeTerninger = isTerningvalgGyldig(inputTab);
 				}
 				ArrayList<Dyr> midlertidig = new ArrayList<Dyr>();
 				for (int i = 0; i < tablengde; i++) {
