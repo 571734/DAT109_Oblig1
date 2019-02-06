@@ -285,7 +285,6 @@ public class mainTest {
 			antallGriser = testMap.get(gris);
 		} catch (NullPointerException e) {
 			antallGriser = 0;
-			e.printStackTrace();
 		}
 		Assert.assertEquals(0, antallGriser);
 		

@@ -75,13 +75,18 @@ public class Yatzoo {
 			if (count != 2) {
 				System.out.println(
 						"\nSkriv inn tallene på terningene du ønsker å beholde, skilt med mellomrom.\nEks: '1 4 5' (Triller 2 og 3 på nytt)");
-				String input = tastatur.nextLine();
-				String[] inputTab = input.split("\\s+");
-				int tablengde;
-				if (input.equals("") || input.equals(" ")) {
-					tablengde = 0;
-				} else {
-					tablengde = inputTab.length;
+				String[] inputTab = null;
+				int tablengde = 0;
+				boolean gyldigeTerninger = false;
+				while (!gyldigeTerninger) {
+					String input = tastatur.nextLine();
+					inputTab = input.split("\\s+");
+					if (input.equals("") || input.equals(" ")) {
+						tablengde = 0;
+					} else {
+						tablengde = inputTab.length;
+					} 
+					gyldigeTerninger = isTerningvalgGyldig(inputTab);
 				}
 				ArrayList<Dyr> midlertidig = new ArrayList<Dyr>();
 				for (int i = 0; i < tablengde; i++) {
@@ -131,6 +136,27 @@ public class Yatzoo {
 		} else {
 			System.out.println("Gratulerer " + vinner.getNavn() + "! Du har vunnet spillet!");
 		}
+	}
+	
+	/**
+	 * Hjelpemetode for å sjekke om angitte terninger, spilleren ønsker å beholde, er gyldig input.
+	 * @param terninger - stringtabell med terningene 
+	 * @return True dersom input er gyldig, false ellers.
+	 */
+	public boolean isTerningvalgGyldig(String[] terninger) {
+		for (int i = 0; i < terninger.length; i++) {
+			try {
+				int a = Integer.parseInt(terninger[i]);
+				if (!(a > 0) || !(a < 6)) {
+					System.out.println("Du har skrevet et tall utenfor tallene 1-5. Prøv igjen.");
+					return false;
+				}
+			} catch (Exception e) {
+				System.out.println("Her kan du kun skrive tall, skilt med mellomrom.");
+				return false;
+			}
+		}
+		return true;
 	}
 
 	public int getRunde() {
