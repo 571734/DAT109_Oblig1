@@ -1,5 +1,5 @@
 DAT109 Oblig1
 
-Gruppe XX
+Gruppe 42
 
-Deltakere: Marcus Morlandstø
+Deltakere: Marcus Korsnes Morlandstø, Anders Kvamsøe, Herborg Irgens Sjo, Jokub Morsund, Christopher Ishaque Jamil
